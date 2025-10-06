@@ -20,3 +20,30 @@ h1 {
 .btn-primary:hover {
   background-color: #5a54e5;
 }
+
+/* === Navbar customization === */
+
+/* Change navbar background and shadow */
+.navbar {
+  background-color: #ffffff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+/* Change brand (YourName) style */
+.navbar-brand {
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  color: #333 !important;
+}
+
+/* Style the nav links */
+.nav-link {
+  font-weight: 500;
+  color: #555 !important;
+  transition: color 0.3s ease;
+}
+
+/* Add hover effect for links */
+.nav-link:hover {
+  color: #6c63ff !important;
+}

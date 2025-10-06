@@ -1,9 +1,33 @@
 {% extends "base.html" %}
-
 {% block content %}
-  <div class="container text-center mt-5">
-    <h1>Welcome to My Portfolio</h1>
-    <p class="lead">I’m an artist and developer — explore my work below!</p>
-    <button class="btn btn-primary">View My Work</button>
+
+<!-- Header section -->
+<div class="text-center mt-5">
+  <h1>Your Name</h1>
+  <p class="lead">I’m an artist and a developer — explore my work below!</p>
+</div>
+
+<!-- Portfolio grid -->
+<div class="row mt-4">
+  <div class="col-6 col-md-4">
+    <div class="card">
+      <img src="{{ url_for('static', filename='images/work1.png') }}" class="card-img-top" alt="Work 1">
+      <div class="card-body">
+        <h5 class="card-title">Project 1</h5>
+        <p class="card-text">Short description</p>
+      </div>
+    </div>
   </div>
+
+  <div class="col-6 col-md-4">
+    <div class="card">
+      <img src="{{ url_for('static', filename='images/work2.png') }}" class="card-img-top" alt="Work 2">
+      <div class="card-body">
+        <h5 class="card-title">Project 2</h5>
+        <p class="card-text">Short description</p>
+      </div>
+    </div>
+  </div>
+</div>
+
 {% endblock %}
