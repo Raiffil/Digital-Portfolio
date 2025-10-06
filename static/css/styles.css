@@ -1,0 +1,22 @@
+/* This changes the page background */
+body {
+  background-color: #f8f9fa;
+}
+
+/* This changes your main heading */
+h1 {
+  color: #333;
+  font-family: 'Arial', sans-serif;
+  text-transform: uppercase;
+  margin-top: 40px;
+}
+
+/* This adds spacing and color to buttons */
+.btn-primary {
+  background-color: #6c63ff;
+  border: none;
+}
+
+.btn-primary:hover {
+  background-color: #5a54e5;
+}
