@@ -47,3 +47,20 @@ body {padding-top: var(--navbar-height);
   color: #6c63ff;
   font-weight: 500;
 }
+
+/* When the screen is smaller than 768px (typical tablet/mobile) */
+@media (max-width: 768px) {
+  #mainNavbar .nav-link {
+    font-size: 0.9rem;   /* make text a bit smaller */
+    margin-left: 6px;    /* reduce spacing between links */
+    margin-right: 6px;
+  }
+
+  #mainNavbar {
+    padding: 0.5rem 0.75rem; /* shrink navbar padding */
+  }
+
+  .navbar-nav {
+    justify-content: center; /* keep buttons centered on small screens */
+  }
+}
