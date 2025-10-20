@@ -35,8 +35,8 @@
     font-size: 1rem;
   }
 
-  .project-box {
-    height: 100px;
+  .info-section .description-col { /* Center info section text on small screens */
+    text-align: center;  /* centers all text inside the column */
   }
 
   .portfolio-column {

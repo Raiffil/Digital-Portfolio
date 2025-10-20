@@ -1,49 +1,45 @@
-/* General page setup */
+/* === General Page Setup === */
 body {
-  background-color: #1E1434;
-  color: #ffffff;
+  position: relative;                 /* needed for the background pseudo-element */
   font-family: 'Poppins', sans-serif;
+  color: #ffffff;
+  padding-top: var(--navbar-height);  /* prevent navbar from overlapping content */
 }
 
-/* === Header section === */
+/* === Background Image === */
+body {
+  font-family: 'Poppins', sans-serif;
+  color: #ffffff;
+  padding-top: var(--navbar-height);  /* keep space for navbar */
+
+  /* Background image */
+  background-image: url("../images/background.png"); /* your image path */
+  background-repeat: repeat-y;       /* tile the image */
+  background-size: contain;           /* scale to show the full image */
+  background-position: center;        /* center it */
+  background-attachment: scroll;      /* image scrolls with page */
+}
+
+/* === Header Section === */
 .header {
   display: flex;
   flex-direction: column;
-  align-items: center;           /* centers horizontally */
-  justify-content: center;       /* centers vertically (optional if you want more space above) */
-  margin-top: 120px;             /* pushes it below navbar */
+  align-items: center;                /* centers horizontally */
+  justify-content: center;            /* centers vertically */
+  margin-top: 120px;                  /* space below navbar */
   text-align: center;
 }
 
-/* Subtitle (small text above name) */
-.header .subtitle {
-  color: #b8b4c8;
-  font-size: 1.1rem;
-  margin-bottom: 10px;
-}
-
-/* Main name */
-.header .main-name {
-  background-color: rgba(255, 255, 255, 0.2); /* white with 20% opacity */
-  color: #ffffff;
-  font-size: 3.5rem;             /* make it big – adjust to your liking */
-  font-weight: 600;
-  border-radius: 20px;           /* rounded corners */
-  padding: 20px 40px;            /* spacing inside the box */
-  display: inline-block;         /* keeps the background only around the text */
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25); /* soft shadow */
-}
-
+/* Box behind header text */
 .header-box {
   display: inline-block;                     /* shrink box to content width */
   background-color: rgba(255, 255, 255, 0.2); /* semi-transparent white */
   padding: 30px 50px;                        /* space inside the box */
   border-radius: 20px;                        /* rounded corners */
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25); /* soft shadow */
   text-align: center;                         /* center text inside box */
 }
 
-/* Adjust the title and subtitle inside the box */
+/* Main title inside header box */
 .header-box .main-title {
   color: #ffffff;
   font-size: 3.5rem;
@@ -51,13 +47,14 @@ body {
   margin: 0;
 }
 
+/* Subtitle inside header box */
 .header-box .subtitle {
   color: #ffffff;
   font-size: 1.1rem;
   margin-bottom: 10px;
 }
 
-/* Info section */
+/* === Info Section === */
 .info-section h2 {
   font-size: 1.4rem;
   font-weight: 600;
@@ -69,7 +66,7 @@ body {
   line-height: 1.6;
 }
 
-/* Portfolio Preview section */
+/* === Portfolio Preview === */
 .portfolio-preview h2 {
   font-size: 1.6rem;
 }
@@ -80,8 +77,9 @@ body {
   font-size: 0.9rem;
 }
 
+/* Columns for 2D / 3D / Software */
 .portfolio-column {
-  background-color: rgba(255, 255, 255, 0.2); /* white with 20% opacity */
+  background-color: rgba(255, 255, 255, 0.2); /* semi-transparent white */
   padding: 10px 15px;
   border-radius: 12px;
   text-align: center;
@@ -93,34 +91,36 @@ body {
   margin-bottom: 10px;
 }
 
+/* Individual project images */
 .project-box {
   width: 100%;
-  height: auto;
+  height: auto;                        /* keep original image proportions */
   aspect-ratio: auto;
   border-radius: 12px;
   margin-bottom: 15px;
-  object-fit: contain;          /* keeps the image’s full proportions */
-  background-color: rgba(255, 255, 255, 0.2); /* white with 20% opacity */
-  padding: 2px;                 /* adds a little space so image isn’t touching the edge */
+  object-fit: contain;                  /* scale image without cropping */
+  background-color: rgba(255, 255, 255, 0.2); /* semi-transparent white */
+  padding: 2px;                         /* small padding so image doesn't touch edge */
   transition: transform 0.2s ease, background-color 0.2s ease;
 }
 
-/* Subtle zoom when hovering */
+/* Hover effect on project images */
 .project-box:hover {
-  transform: scale(1.02);
-  background-color: rgba(255, 255, 255, 0.25);
+  transform: scale(1.02);               /* subtle zoom */
+  background-color: rgba(255, 255, 255, 0.25); /* slightly brighter */
 }
 
-/* === Navbar customization === */
-:root {--navbar-height: 72px;}
-body {padding-top: var(--navbar-height);
+/* === Navbar Customization === */
+:root {
+  --navbar-height: 72px;
 }
 
-/* Slightly customize Bootstrap’s default colors (optional) */
 #mainNavbar {
-  background-color: #312659; /* background */
+  background-color: #1E1434;            /* dark purple background */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05); /* subtle shadow */
   transition: background-color 0.2s ease;
+  border-bottom-left-radius: 20px;      /* round bottom-left corner */
+  border-bottom-right-radius: 20px;     /* round bottom-right corner */
 }
 
 /* Brand name styling */
@@ -129,32 +129,42 @@ body {padding-top: var(--navbar-height);
   color: #FFFFFF;
 }
 
-/* Link styling */
+/* Navbar links */
 #mainNavbar .nav-link {
   color: #FFFFFF;
   margin-left: 10px;
   transition: color 0.2s ease;
 }
 
-/* Hover state */
+/* Hover state for navbar links */
 #mainNavbar .nav-link:hover {
-  color: #6c63ff; /* accent color, change if you want */
+  color: #B0A7C6; /* accent color on hover */
 }
 
-/* Active page (the current one) */
+/* Active page link */
 #mainNavbar .nav-link.active {
-  color: #6c63ff;
+  color: #B0A7C6;
   font-weight: 500;
 }
 
+/* Navbar links with semi-transparent box */
+.navbar .nav-link-box {
+  background-color: rgba(255, 255, 255, 0.1); /* normal 10% opacity */
+  padding: 8px 15px;          /* spacing inside box */
+  border-radius: 12px;        /* rounded corners */
+  transition: background-color 0.2s ease, transform 0.2s ease;
+  color: #ffffff;             /* text stays white */
+  display: inline-block;      /* box only around text */
+}
 
-/* ===== Background image ===== */
+/* Hover effect for navbar links */
+.navbar .nav-link-box:hover {
+  background-color: rgba(255, 255, 255, 0.2); /* 20% opacity */
+  transform: scale(1.05);                      /* subtle zoom */
+}
 
-/*body {
-/*  background-image: url("../images/background.png");  /* path */
-/*  background-repeat: repeat-y;       /* tile it vertically */
-/*  background-size: cover;             /* scale image to fill screen, keep proportions */
-/*  background-position: center;         /* keep it centered */
-/*background-attachment: scroll;
-} */
+/* Active page navbar link */
+.navbar .nav-link-box.active {
+  background-color: rgba(255, 255, 255, 0.2); /* 20% opacity */
+}
 

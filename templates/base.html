@@ -29,16 +29,17 @@
 
     <div class="collapse navbar-collapse" id="mainNav">
       <ul class="navbar-nav ms-auto">
-        <li class="nav-item">
-          <a class="nav-link {% if title == 'Home' %}active{% endif %}" href="{{ url_for('home') }}">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link {% if title == 'Portfolio' %}active{% endif %}" href="{{ url_for('portfolio') }}">Portfolio</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link {% if title == 'Contact' %}active{% endif %}" href="{{ url_for('contact') }}">Contact</a>
-        </li>
-      </ul>
+  <li class="nav-item">
+    <a class="nav-link nav-link-box {% if title == 'Home' %}active{% endif %}" href="{{ url_for('home') }}">Home</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link nav-link-box {% if title == 'Portfolio' %}active{% endif %}" href="{{ url_for('portfolio') }}">Portfolio</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link nav-link-box {% if title == 'Contact' %}active{% endif %}" href="{{ url_for('contact') }}">Contact</a>
+  </li>
+</ul>
+
     </div>
   </div>
 </nav>
