@@ -2,32 +2,64 @@
 {% block content %}
 
 <!-- Header section -->
-<div class="text-center mt-5">
-  <h1>Natália Palšovičová</h1>
-  <p class="lead">2D & 3D artist and a developer</p>
-</div>
+<section class="header-section text-center">
+  <div class="header-box">
+    <p class="subtitle">2D & 3D artist and a developer</p>
+    <h1 class="main-title">Natália Palšovičová</h1>
+  </div>
+</section>
 
-<!-- Portfolio grid -->
-<div class="row mt-4">
-  <div class="col-6 col-md-4">
-    <div class="card">
-      <img src="{{ url_for('static', filename='images/work1.png') }}" class="card-img-top" alt="Work 1">
-      <div class="card-body">
-        <h5 class="card-title">Project 1</h5>
-        <p class="card-text">Short description</p>
+<!-- Info section -->
+<section class="info-section container mt-5">
+  <div class="row">
+    <div class="col-md-6 text-center text-md-start">
+      <h2>Skills</h2>
+      <p>List skills here</p>
+    </div>
+    <div class="col-md-6 text-center text-md-end">
+  <h2>Description</h2>
+  <p class="text-end">I’m an ICT Uni student with some previous education in Industrial design and traditional drawing. My focus is 2D Digital art, 3D Props and Game Dev.
+      My contact information can be found on the Contact page.</p>
+</div>
+  </div>
+</section>
+
+<!-- Portfolio Preview -->
+<section class="portfolio-preview container mt-5">
+  <div class="d-flex justify-content-between align-items-center mb-3">
+    <h2>Portfolio Preview</h2>
+    <a href="{{ url_for('portfolio') }}" class="see-more">Click to see more</a>
+  </div>
+
+  <div class="row">
+    <!-- 2D column -->
+    <div class="col-md-4">
+      <div class="portfolio-column">
+        <h4>2D</h4>
+        <img src="{{ url_for('static', filename='images/2D work 1.png') }}" alt="N2D work 1" class="project-box">
+        <img src="{{ url_for('static', filename='images/2D work 2.png') }}" alt="N2D work 2" class="project-box">
+        <img src="{{ url_for('static', filename='images/2D work 3.png') }}" alt="N2D work 3" class="project-box">
+      </div>
+    </div>
+
+    <!-- 3D column -->
+    <div class="col-md-4">
+      <div class="portfolio-column">
+        <h4>3D</h4>
+        <img src="{{ url_for('static', filename='images/3D work 1.jpg') }}" alt="N3D work 1" class="project-box">
+        <img src="{{ url_for('static', filename='images/3D work 2.jpeg') }}" alt="N3D work 2" class="project-box">
+      </div>
+    </div>
+
+    <!-- Software column -->
+    <div class="col-md-4">
+      <div class="portfolio-column">
+        <h4>Software</h4>
+        <img src="{{ url_for('static', filename='images/Software work 1.png') }}" alt="NSoftware project 1" class="project-box">
+        <img src="{{ url_for('static', filename='images/Software work 2.png') }}" alt="NSoftware project 2" class="project-box">
       </div>
     </div>
   </div>
-
-  <div class="col-6 col-md-4">
-    <div class="card">
-      <img src="{{ url_for('static', filename='images/work2.png') }}" class="card-img-top" alt="Work 2">
-      <div class="card-body">
-        <h5 class="card-title">Project 2</h5>
-        <p class="card-text">Short description</p>
-      </div>
-    </div>
-  </div>
-</div>
+</section>
 
 {% endblock %}

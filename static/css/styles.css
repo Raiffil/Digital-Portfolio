@@ -1,16 +1,115 @@
-/* This changes the page background */
+/* General page setup */
 body {
-  background-color: #f8f9fa;
+  background-color: #1E1434;
+  color: #ffffff;
+  font-family: 'Poppins', sans-serif;
 }
 
-/* This changes your main heading */
-h1 {
-  color: #333;
-  font-family: 'Arial', sans-serif;
-  text-transform: uppercase;
-  margin-top: 40px;
+/* === Header section === */
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;           /* centers horizontally */
+  justify-content: center;       /* centers vertically (optional if you want more space above) */
+  margin-top: 120px;             /* pushes it below navbar */
+  text-align: center;
 }
 
+/* Subtitle (small text above name) */
+.header .subtitle {
+  color: #b8b4c8;
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+}
+
+/* Main name */
+.header .main-name {
+  background-color: rgba(255, 255, 255, 0.2); /* white with 20% opacity */
+  color: #ffffff;
+  font-size: 3.5rem;             /* make it big – adjust to your liking */
+  font-weight: 600;
+  border-radius: 20px;           /* rounded corners */
+  padding: 20px 40px;            /* spacing inside the box */
+  display: inline-block;         /* keeps the background only around the text */
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25); /* soft shadow */
+}
+
+.header-box {
+  display: inline-block;                     /* shrink box to content width */
+  background-color: rgba(255, 255, 255, 0.2); /* semi-transparent white */
+  padding: 30px 50px;                        /* space inside the box */
+  border-radius: 20px;                        /* rounded corners */
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25); /* soft shadow */
+  text-align: center;                         /* center text inside box */
+}
+
+/* Adjust the title and subtitle inside the box */
+.header-box .main-title {
+  color: #ffffff;
+  font-size: 3.5rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.header-box .subtitle {
+  color: #ffffff;
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+}
+
+/* Info section */
+.info-section h2 {
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.info-section p {
+  color: #ddd;
+  line-height: 1.6;
+}
+
+/* Portfolio Preview section */
+.portfolio-preview h2 {
+  font-size: 1.6rem;
+}
+
+.portfolio-preview .see-more {
+  color: #b8a9d5;
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.portfolio-column {
+  background-color: rgba(255, 255, 255, 0.2); /* white with 20% opacity */
+  padding: 10px 15px;
+  border-radius: 12px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.portfolio-column h4 {
+  color: #ffffff;
+  margin-bottom: 10px;
+}
+
+.project-box {
+  width: 100%;
+  height: auto;
+  aspect-ratio: auto;
+  border-radius: 12px;
+  margin-bottom: 15px;
+  object-fit: contain;          /* keeps the image’s full proportions */
+  background-color: rgba(255, 255, 255, 0.2); /* white with 20% opacity */
+  padding: 2px;                 /* adds a little space so image isn’t touching the edge */
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+/* Subtle zoom when hovering */
+.project-box:hover {
+  transform: scale(1.02);
+  background-color: rgba(255, 255, 255, 0.25);
+}
 
 /* === Navbar customization === */
 :root {--navbar-height: 72px;}
@@ -19,7 +118,7 @@ body {padding-top: var(--navbar-height);
 
 /* Slightly customize Bootstrap’s default colors (optional) */
 #mainNavbar {
-  background-color: #ffffff; /* white background */
+  background-color: #312659; /* background */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05); /* subtle shadow */
   transition: background-color 0.2s ease;
 }
@@ -27,12 +126,12 @@ body {padding-top: var(--navbar-height);
 /* Brand name styling */
 #mainNavbar .navbar-brand {
   font-weight: 600;
-  color: #222222;
+  color: #FFFFFF;
 }
 
 /* Link styling */
 #mainNavbar .nav-link {
-  color: #333333;
+  color: #FFFFFF;
   margin-left: 10px;
   transition: color 0.2s ease;
 }
@@ -48,19 +147,14 @@ body {padding-top: var(--navbar-height);
   font-weight: 500;
 }
 
-/* When the screen is smaller than 768px (typical tablet/mobile) */
-@media (max-width: 768px) {
-  #mainNavbar .nav-link {
-    font-size: 0.9rem;   /* make text a bit smaller */
-    margin-left: 6px;    /* reduce spacing between links */
-    margin-right: 6px;
-  }
 
-  #mainNavbar {
-    padding: 0.5rem 0.75rem; /* shrink navbar padding */
-  }
+/* ===== Background image ===== */
 
-  .navbar-nav {
-    justify-content: center; /* keep buttons centered on small screens */
-  }
-}
+/*body {
+/*  background-image: url("../images/background.png");  /* path */
+/*  background-repeat: repeat-y;       /* tile it vertically */
+/*  background-size: cover;             /* scale image to fill screen, keep proportions */
+/*  background-position: center;         /* keep it centered */
+/*background-attachment: scroll;
+} */
+
