@@ -10,7 +10,7 @@
   --color-header-bg: #5A827E;
   --color-project-bg: #C5C5C5;
   --color-form-bg: #252F2F;
-  --color-form-outline: #404040; /* light divider line */
+  --color-form-outline: #404040;
 
   --navbar-height: 72px;
   --border-radius: 20px;
@@ -39,8 +39,8 @@ body {
 
 #mainNavbar .nav-link {
   color: var(--color-text);
-  font-weight: 200; /* Extra Light */
-  font-size: 1.5rem; /* 24px */
+  font-weight: 200;
+  font-size: 1.5rem;
   margin-left: 10px;
   transition: color var(--transition-speed) ease;
 }
@@ -78,44 +78,44 @@ body {
 .header-box .main-title {
   font-family: 'Roboto Slab', serif;
   color: var(--color-text);
-  font-size: 6rem; /* 96px ≈ 6rem */
-  font-weight: 400; /* regular weight */
+  font-size: 6rem;
+  font-weight: 400;
   margin: 0;
 }
 
 .header-box .subtitle {
   color: var(--color-text);
   font-family: 'Roboto Slab', serif;
-  font-weight: 200; /* Extra Light */
-  font-size: 1.5rem; /* 24px */
+  font-weight: 200;
+  font-size: 1.5rem;
   margin-bottom: 10px;
 }
 
 /* === INFO SECTION === */
 .info-section h2 {
-  font-weight: 400; /* Regular */
-  font-size: 2.5rem; /* 40px */
+  font-weight: 400;
+  font-size: 2.5rem;
   margin-bottom: 10px;
 }
 
 .info-section p {
   color: var(--color-text-muted);
-  font-weight: 200; /* Extra Light */
-  font-size: 1.5rem; /* 24px */
+  font-weight: 200;
+  font-size: 1.5rem;
   line-height: 1.6;
 }
 
 /* === PORTFOLIO PREVIEW === */
 .portfolio-preview h2 {
-  font-weight: 400; /* Regular */
-  font-size: 2.5rem; /* 40px */
+  font-weight: 400;
+  font-size: 2.5rem;
 }
 
 .portfolio-preview .see-more {
   color: var(--color-accent);
   text-decoration: none;
-  font-weight: 200; /* Extra Light */
-  font-size: 1.1rem; /* 18px */
+  font-weight: 200;
+  font-size: 1.1rem;
 }
 
 .portfolio-column {
@@ -127,18 +127,18 @@ body {
 }
 
 .portfolio-column h4 {
-  font-weight: 400; /* Regular */
-  font-size: 1.5rem; /* 24px */
+  font-weight: 400;
+  font-size: 1.5rem;
   background-color: var(--color-header-bg);
-  padding: 2px 5px; /* Add space inside the box */
+  padding: 2px 5px;
   border-radius: var(--border-radius);
   display: block;
-  width: 80%; /* 80% of the column width */
-  text-align: center; /* center text inside the box */
+  width: 80%;
+  text-align: center;
   margin-left: auto;
   margin-right: auto;
   color: var(--color-text);
-  margin-bottom: 10px; /* space below the box */
+  margin-bottom: 10px;
 }
 
 .project-box {
@@ -157,15 +157,18 @@ body {
   background-color: var(--color-accent);
 }
 
-
 /* === CONTACT PAGE === */
-/* Section layout */
 .contact-section {
   color: var(--color-text);
   margin-top: 100px;
 }
 
-/* Divider line under the name */
+/* Contact page header  */
+.contact-title {
+  font-size: 2.5rem;
+}
+
+/* Divider under name */
 .contact-divider {
   border: none;
   height: 4px;
@@ -185,32 +188,47 @@ body {
   display: inline-block;
 }
 
-/* Individual social rows */
-.social-item {
+/* === SOCIAL BUTTONS === */
+.social-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  align-items: flex-start;
+}
+
+.social-btn {
   display: flex;
   align-items: center;
-  gap: 10px;
-  margin-bottom: 15px;
-}
-
-.social-icon {
+  justify-content: flex-start;
   background-color: var(--color-box);
-  border-radius: 12px;
-  padding: 8px;
-  font-size: 1.3rem;
-}
-
-.social-item a, .social-item span {
-  color: var(--color-text-muted);
+  color: var(--color-text);
   text-decoration: none;
-  font-size: 1.2rem;
+  border-radius: 999px;
+  padding: 8px 20px;
+  width: 260px;
+  transition: background-color var(--transition-speed) ease, transform var(--transition-speed) ease;
 }
 
-.social-item a:hover {
-  color: var(--color-accent);
+.social-btn:hover {
+  background-color: var(--color-box-hover);
+  transform: scale(1.03);
+  color: var(--color-text);
 }
 
-/* QR image */
+.social-icon-img {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+  margin-right: 12px;
+}
+
+.social-text {
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: var(--color-text);
+}
+
+/* QR Code */
 .qr-box {
   background-color: var(--color-box);
   padding: 10px;
@@ -224,11 +242,13 @@ body {
   border-radius: var(--border-radius);
 }
 
-/* Contact form section */
-.contact-form-title {
+/* === CONTACT FORM SECTION === */
+.contact-form-label {
+  font-size: 1.5rem;
   font-weight: 400;
-  font-size: 2rem;
-  margin-bottom: 10px;
+  color: var(--color-text);
+  margin-bottom: 8px;
+  text-align: center;
 }
 
 .contact-form-box {
@@ -236,37 +256,41 @@ body {
   border-radius: var(--border-radius);
   padding: 20px 30px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  text-align: center;
 }
 
-.contact-form-box .form-label {
+/* Field labels (Name, Email, Request) */
+.contact-label {
   display: block;
-  font-weight: 400;
-  color: var(--color-text);
-  margin-top: 10px;
-  background-color: var(--color-box);
-  padding: 5px 10px;
-  border-radius: 10px;
-}
-
-.form-input,
-.form-textarea {
   width: 100%;
-  margin-top: 6px;
-  padding: 10px 12px;
+  background-color: var(--color-header-bg);
+  color: var(--color-text);
+  font-size: 1.2rem;
+  font-weight: 400;
+  text-align: center;
+  padding: 6px 0; /* thinner vertical padding */
   border-radius: 10px;
-  border: none;
-  outline: none;
-  background-color: var(--color-box);
-  color: var(--color-text-muted);
+  margin-bottom: 10px;
 }
 
-.form-textarea {
-  height: 150px;
-  resize: none;
+/* Inputs */
+.custom-input {
+  background-color: var(--color-box);
+  color: var(--color-text);
+  border: none;
+  border-radius: 12px;
+  padding: 10px;
+  width: 100%;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.custom-input::placeholder {
+  color: rgba(255, 255, 255, 0.6);
 }
 
 /* Send button */
-.form-button {
+.send-btn {
   background-color: var(--color-box-hover);
   border: none;
   color: var(--color-text);
@@ -275,47 +299,14 @@ body {
   padding: 10px 0;
   border-radius: 12px;
   width: 100%;
-  transition: background-color var(--transition-speed) ease, transform var(--transition-speed) ease;
 }
 
-.form-button:hover {
-  background-color: var(--color-accent);
-  transform: scale(1.02);
+.send-btn:hover {
+background-color: var(--color-accent);
+transform: scale(1.02);
 }
 
-/* === SOCIAL BUTTONS (CONTACT PAGE) === */
-
-.social-buttons {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-}
-
-.social-btn {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  background-color: var(--color-box); /* same as navbar buttons */
-  color: var(--color-text);
-  text-decoration: none;
-  font-family: 'Roboto Slab', serif;
-  font-size: 1.2rem;
-  font-weight: 400;
-  padding: 10px 18px;
-  border-radius: 999px; /* makes it pill-shaped */
-  width: fit-content;
-  transition: background-color var(--transition-speed) ease, transform var(--transition-speed) ease;
-}
-
-.social-btn:hover {
-  background-color: var(--color-box-hover); /* same hover as navbar */
-  transform: scale(1.05);
-  text-decoration: none;
-  color: var(--color-accent);
-}
-
-.social-icon-img {
-  width: 26px;
-  height: 26px;
-  object-fit: contain;
+/* === CONTACT PAGE HEADER OVERRIDE === */
+.contact-section .header-box .main-title {
+  font-size: 2.5rem; /* smaller size just for contact page */
 }
