@@ -1,7 +1,7 @@
 /* Responsive adjustments for screens smaller than 768px */
 @media (max-width: 768px) {
   #mainNavbar .nav-link {
-    font-size: 0.9rem;   /* make text a bit smaller */
+    font-size: 1.2rem; /* scales down from 24px */
     margin-left: 6px;    /* reduce spacing between links */
     margin-right: 6px;
   }
@@ -15,12 +15,12 @@
   }
 
   .header .main-name {
-    font-size: 2.2rem;
+    font-size: 1.6rem;
     padding: 15px 25px;
   }
 
   .header .subtitle {
-    font-size: 1rem;
+    font-size: 1.2rem; /* scales down from 24px */
   }
 
   .header-box {
@@ -32,7 +32,7 @@
   }
 
   .header-box .subtitle {
-    font-size: 1rem;
+    font-size: 1.2rem;
   }
 
   .info-section .description-col { /* Center info section text on small screens */
@@ -41,9 +41,19 @@
 
   .portfolio-column {
     margin-bottom: 25px;
+    font-size: 1.2rem;
   }
 
   .portfolio-preview h2 {
-    font-size: 1.3rem;
+    font-size: 1.6rem;
   }
+
+  .info-section h2 {
+    font-size: 1.6rem;
+  }
+
+  .info-section p {
+  font-size: 1.2rem;
+  }
+
 }

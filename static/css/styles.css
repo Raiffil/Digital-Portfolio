@@ -1,14 +1,14 @@
 /* === COLOR VARIABLES (easy theming) === */
 :root {
-  --color-bg: #5A827E;
-  --color-navbar: #84AE92;
+  --color-bg: #232323;
+  --color-navbar: #252F2F;
   --color-text: #ffffff;
   --color-text-muted: #dddddd;
-  --color-accent: #FAFFCA;
-  --color-box: rgba(250, 255, 202, 0.2);
-  --color-box-hover: rgba(250, 255, 202, 0.4);
-  --color-header-bg: #B9D4AA;
-  --color-project-bg: #84AE92;
+  --color-accent: #5A827E;
+  --color-box: rgba(214, 206, 189, 0.2);
+  --color-box-hover: rgba(214, 206, 189, 0.4);
+  --color-header-bg: #5A827E;
+  --color-project-bg: #C5C5C5;
 
   --navbar-height: 72px;
   --border-radius: 20px;
@@ -18,7 +18,7 @@
 /* === GENERAL PAGE SETUP === */
 body {
   background-color: var(--color-bg);
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Roboto Slab', serif;
   color: var(--color-text);
   padding-top: var(--navbar-height);
 }
@@ -37,6 +37,8 @@ body {
 
 #mainNavbar .nav-link {
   color: var(--color-text);
+  font-weight: 200; /* Extra Light */
+  font-size: 1.5rem; /* 24px */
   margin-left: 10px;
   transition: color var(--transition-speed) ease;
 }
@@ -72,39 +74,46 @@ body {
 }
 
 .header-box .main-title {
+  font-family: 'Roboto Slab', serif;
   color: var(--color-text);
-  font-size: 3.5rem;
-  font-weight: 600;
+  font-size: 6rem; /* 96px ≈ 6rem */
+  font-weight: 400; /* regular weight */
   margin: 0;
 }
 
 .header-box .subtitle {
   color: var(--color-text);
-  font-size: 1.1rem;
+  font-family: 'Roboto Slab', serif;
+  font-weight: 200; /* Extra Light */
+  font-size: 1.5rem; /* 24px */
   margin-bottom: 10px;
 }
 
 /* === INFO SECTION === */
 .info-section h2 {
-  font-size: 1.4rem;
-  font-weight: 600;
+  font-weight: 400; /* Regular */
+  font-size: 2.5rem; /* 40px */
   margin-bottom: 10px;
 }
 
 .info-section p {
   color: var(--color-text-muted);
+  font-weight: 200; /* Extra Light */
+  font-size: 1.5rem; /* 24px */
   line-height: 1.6;
 }
 
 /* === PORTFOLIO PREVIEW === */
 .portfolio-preview h2 {
-  font-size: 1.6rem;
+  font-weight: 400; /* Regular */
+  font-size: 2.5rem; /* 40px */
 }
 
 .portfolio-preview .see-more {
   color: var(--color-accent);
   text-decoration: none;
-  font-size: 0.9rem;
+  font-weight: 200; /* Extra Light */
+  font-size: 1.1rem; /* 18px */
 }
 
 .portfolio-column {
@@ -117,6 +126,8 @@ body {
 
 .portfolio-column h4 {
   color: var(--color-text);
+  font-weight: 400; /* Regular */
+  font-size: 1.5rem; /* 24px */
   margin-bottom: 10px;
 }
 
@@ -126,12 +137,12 @@ body {
   border-radius: 12px;
   margin-bottom: 15px;
   object-fit: contain;
-  background-color: var(--olor-box-hover);
+  background-color: var(--color-box);
   padding: 2px;
   transition: transform var(--transition-speed) ease, background-color var(--transition-speed) ease;
 }
 
 .project-box:hover {
   transform: scale(1.02);
-  background-color: var(--color-box-hover);
+  background-color: var(--color-accent);
 }
