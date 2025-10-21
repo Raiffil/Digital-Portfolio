@@ -1,60 +1,90 @@
-/* === General Page Setup === */
-body {
-  position: relative;                 /* needed for the background pseudo-element */
-  font-family: 'Poppins', sans-serif;
-  color: #ffffff;
-  padding-top: var(--navbar-height);  /* prevent navbar from overlapping content */
+/* === COLOR VARIABLES (easy theming) === */
+:root {
+  --color-bg: #5A827E;
+  --color-navbar: #84AE92;
+  --color-text: #ffffff;
+  --color-text-muted: #dddddd;
+  --color-accent: #FAFFCA;
+  --color-box: rgba(250, 255, 202, 0.2);
+  --color-box-hover: rgba(250, 255, 202, 0.4);
+  --color-header-bg: #B9D4AA;
+  --color-project-bg: #84AE92;
+
+  --navbar-height: 72px;
+  --border-radius: 20px;
+  --transition-speed: 0.2s;
 }
 
-/* === Background Image === */
+/* === GENERAL PAGE SETUP === */
 body {
+  background-color: var(--color-bg);
   font-family: 'Poppins', sans-serif;
-  color: #ffffff;
-  padding-top: var(--navbar-height);  /* keep space for navbar */
-
-  /* Background image */
-  background-image: url("../images/background.png"); /* your image path */
-  background-repeat: repeat-y;       /* tile the image */
-  background-size: contain;           /* scale to show the full image */
-  background-position: center;        /* center it */
-  background-attachment: scroll;      /* image scrolls with page */
+  color: var(--color-text);
+  padding-top: var(--navbar-height);
 }
 
-/* === Header Section === */
+/* === NAVBAR === */
+#mainNavbar {
+  background-color: var(--color-navbar);
+  border-bottom-left-radius: var(--border-radius);
+  border-bottom-right-radius: var(--border-radius);
+}
+
+#mainNavbar .navbar-brand {
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+#mainNavbar .nav-link {
+  color: var(--color-text);
+  margin-left: 10px;
+  transition: color var(--transition-speed) ease;
+}
+
+.navbar .nav-link-box {
+  background-color: var(--color-box);
+  padding: 8px 15px;
+  border-radius: 12px;
+  color: var(--color-text);
+  display: inline-block;
+  transition: background-color var(--transition-speed) ease, transform var(--transition-speed) ease;
+}
+
+.navbar .nav-link-box:hover,
+.navbar .nav-link-box.active {
+  background-color: var(--color-box-hover);
+  transform: scale(1.05);
+}
+
+/* === HEADER === */
 .header {
   display: flex;
   flex-direction: column;
-  align-items: center;                /* centers horizontally */
-  justify-content: center;            /* centers vertically */
-  margin-top: 120px;                  /* space below navbar */
+  align-items: center;
+  margin-top: 120px;
   text-align: center;
 }
 
-/* Box behind header text */
 .header-box {
-  display: inline-block;                     /* shrink box to content width */
-  background-color: rgba(255, 255, 255, 0.2); /* semi-transparent white */
-  padding: 30px 50px;                        /* space inside the box */
-  border-radius: 20px;                        /* rounded corners */
-  text-align: center;                         /* center text inside box */
+  background-color: var(--color-header-bg);
+  padding: 30px 50px;
+  border-radius: var(--border-radius);
 }
 
-/* Main title inside header box */
 .header-box .main-title {
-  color: #ffffff;
+  color: var(--color-text);
   font-size: 3.5rem;
   font-weight: 600;
   margin: 0;
 }
 
-/* Subtitle inside header box */
 .header-box .subtitle {
-  color: #ffffff;
+  color: var(--color-text);
   font-size: 1.1rem;
   margin-bottom: 10px;
 }
 
-/* === Info Section === */
+/* === INFO SECTION === */
 .info-section h2 {
   font-size: 1.4rem;
   font-weight: 600;
@@ -62,24 +92,23 @@ body {
 }
 
 .info-section p {
-  color: #ddd;
+  color: var(--color-text-muted);
   line-height: 1.6;
 }
 
-/* === Portfolio Preview === */
+/* === PORTFOLIO PREVIEW === */
 .portfolio-preview h2 {
   font-size: 1.6rem;
 }
 
 .portfolio-preview .see-more {
-  color: #b8a9d5;
+  color: var(--color-accent);
   text-decoration: none;
   font-size: 0.9rem;
 }
 
-/* Columns for 2D / 3D / Software */
 .portfolio-column {
-  background-color: rgba(255, 255, 255, 0.2); /* semi-transparent white */
+  background-color: var(--color-project-bg);
   padding: 10px 15px;
   border-radius: 12px;
   text-align: center;
@@ -87,84 +116,22 @@ body {
 }
 
 .portfolio-column h4 {
-  color: #ffffff;
+  color: var(--color-text);
   margin-bottom: 10px;
 }
 
-/* Individual project images */
 .project-box {
   width: 100%;
-  height: auto;                        /* keep original image proportions */
-  aspect-ratio: auto;
+  height: auto;
   border-radius: 12px;
   margin-bottom: 15px;
-  object-fit: contain;                  /* scale image without cropping */
-  background-color: rgba(255, 255, 255, 0.2); /* semi-transparent white */
-  padding: 2px;                         /* small padding so image doesn't touch edge */
-  transition: transform 0.2s ease, background-color 0.2s ease;
+  object-fit: contain;
+  background-color: var(--olor-box-hover);
+  padding: 2px;
+  transition: transform var(--transition-speed) ease, background-color var(--transition-speed) ease;
 }
 
-/* Hover effect on project images */
 .project-box:hover {
-  transform: scale(1.02);               /* subtle zoom */
-  background-color: rgba(255, 255, 255, 0.25); /* slightly brighter */
+  transform: scale(1.02);
+  background-color: var(--color-box-hover);
 }
-
-/* === Navbar Customization === */
-:root {
-  --navbar-height: 72px;
-}
-
-#mainNavbar {
-  background-color: #1E1434;            /* dark purple background */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05); /* subtle shadow */
-  transition: background-color 0.2s ease;
-  border-bottom-left-radius: 20px;      /* round bottom-left corner */
-  border-bottom-right-radius: 20px;     /* round bottom-right corner */
-}
-
-/* Brand name styling */
-#mainNavbar .navbar-brand {
-  font-weight: 600;
-  color: #FFFFFF;
-}
-
-/* Navbar links */
-#mainNavbar .nav-link {
-  color: #FFFFFF;
-  margin-left: 10px;
-  transition: color 0.2s ease;
-}
-
-/* Hover state for navbar links */
-#mainNavbar .nav-link:hover {
-  color: #B0A7C6; /* accent color on hover */
-}
-
-/* Active page link */
-#mainNavbar .nav-link.active {
-  color: #B0A7C6;
-  font-weight: 500;
-}
-
-/* Navbar links with semi-transparent box */
-.navbar .nav-link-box {
-  background-color: rgba(255, 255, 255, 0.1); /* normal 10% opacity */
-  padding: 8px 15px;          /* spacing inside box */
-  border-radius: 12px;        /* rounded corners */
-  transition: background-color 0.2s ease, transform 0.2s ease;
-  color: #ffffff;             /* text stays white */
-  display: inline-block;      /* box only around text */
-}
-
-/* Hover effect for navbar links */
-.navbar .nav-link-box:hover {
-  background-color: rgba(255, 255, 255, 0.2); /* 20% opacity */
-  transform: scale(1.05);                      /* subtle zoom */
-}
-
-/* Active page navbar link */
-.navbar .nav-link-box.active {
-  background-color: rgba(255, 255, 255, 0.2); /* 20% opacity */
-}
-
