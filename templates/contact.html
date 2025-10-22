@@ -16,28 +16,40 @@
       <div class="social-buttons">
 
         <!-- ArtStation -->
-        <a href="https://www.artstation.com/raiffil" target="_blank" class="social-btn">
-          <img src="{{ url_for('static', filename='icons/artstation.png') }}" alt="ArtStation" class="social-icon-img">
-          <span class="social-text">ArtStation</span>
-        </a>
+        <div class="social-row">
+          <a href="https://www.artstation.com/raiffil" target="_blank" class="social-btn">
+            <img src="{{ url_for('static', filename='icons/artstation.png') }}" alt="ArtStation" class="social-icon-img">
+            <span class="social-text">ArtStation</span>
+          </a>
+          <span class="social-extra-text">artstation.com/raiffil</span>
+        </div>
 
         <!-- Instagram -->
-        <a href="https://www.instagram.com/raiffil_" target="_blank" class="social-btn">
-          <img src="{{ url_for('static', filename='icons/instagram.png') }}" alt="Instagram" class="social-icon-img">
-          <span class="social-text">Instagram</span>
-        </a>
+        <div class="social-row">
+          <a href="https://www.instagram.com/raiffil_" target="_blank" class="social-btn">
+            <img src="{{ url_for('static', filename='icons/instagram.png') }}" alt="Instagram" class="social-icon-img">
+            <span class="social-text">Instagram</span>
+          </a>
+          <span class="social-extra-text">2D only - raiffil_</span>
+        </div>
 
         <!-- Email -->
-        <a href="mailto:raiffil.business@gmail.com" class="social-btn">
-          <img src="{{ url_for('static', filename='icons/email.png') }}" alt="Email" class="social-icon-img">
-          <span class="social-text">Email</span>
-        </a>
+        <div class="social-row">
+          <a href="mailto:raiffil.business@gmail.com" class="social-btn">
+            <img src="{{ url_for('static', filename='icons/email.png') }}" alt="Email" class="social-icon-img">
+            <span class="social-text">Email</span>
+          </a>
+          <span class="social-extra-text">raiffil.business@gmail.com</span>
+        </div>
 
         <!-- LinkedIn -->
-        <a href="https://www.linkedin.com/in/natália-palšovičová" target="_blank" class="social-btn">
-          <img src="{{ url_for('static', filename='icons/linkedin.png') }}" alt="LinkedIn" class="social-icon-img">
-          <span class="social-text">LinkedIn</span>
-        </a>
+        <div class="social-row">
+          <a href="https://www.linkedin.com/in/nat%C3%A1lia-pal%C5%A1ovi%C4%8Dov%C3%A1-3a020a372/" target="_blank" class="social-btn">
+            <img src="{{ url_for('static', filename='icons/linkedin.png') }}" alt="LinkedIn" class="social-icon-img">
+            <span class="social-text">LinkedIn</span>
+          </a>
+          <span class="social-extra-text">Natália Palšovičová</span>
+        </div>
 
       </div>
 
@@ -47,21 +59,21 @@
       </div>
     </div>
 
-    <!-- RIGHT SIDE: Contact Form -->
+   <!-- RIGHT SIDE: Contact Form -->
     <div class="col-md-6 text-center">
-      <h2 class="contact-subtitle mb-3">Do you want to Commission me?</h2>
+      <h2 class="contact-subtitle mb-3">Do you want to <br> Commission me?</h2>
       <p class="contact-form-label">Contact Form</p>
 
       <div class="contact-form-box mx-auto p-4 rounded-4" style="max-width: 400px;">
         <form>
           <label class="form-label contact-label">Name</label>
-          <input type="text" class="form-control mb-3 custom-input" placeholder="Jane Doe">
+          <input type="text" class="form-control custom-input" placeholder="Jane Doe">
 
           <label class="form-label contact-label">Email</label>
-          <input type="email" class="form-control mb-3 custom-input" placeholder="jane.doe@gmail.com">
+          <input type="email" class="form-control custom-input" placeholder="jane.doe@gmail.com">
 
           <label class="form-label contact-label">Request</label>
-          <textarea class="form-control mb-3 custom-input" rows="4" placeholder="Insert text here"></textarea>
+          <textarea class="form-control custom-input" rows="4" placeholder="Insert text here"></textarea>
 
           <button type="submit" class="btn send-btn">Send</button>
         </form>

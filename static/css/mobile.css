@@ -2,12 +2,12 @@
 @media (max-width: 768px) {
   #mainNavbar .nav-link {
     font-size: 1.2rem; /* scales down from 24px */
-    margin-left: 6px;    /* reduce spacing between links */
-    margin-right: 6px;
+    margin-left: 4px;    /* reduce spacing between links */
+    margin-right: 4px;
   }
 
   #mainNavbar {
-    padding: 0.5rem 0.75rem; /* shrink navbar padding */
+    padding: 0.5rem 0.5rem; /* shrink navbar padding */
   }
 
   .navbar-nav {

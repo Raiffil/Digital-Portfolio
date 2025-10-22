@@ -1,7 +1,7 @@
 /* === COLOR VARIABLES (easy theming) === */
 :root {
   --color-bg: #232323;
-  --color-navbar: #252F2F;
+  --color-navbar: #314040;
   --color-text: #ffffff;
   --color-text-muted: #dddddd;
   --color-accent: #5A827E;
@@ -9,11 +9,11 @@
   --color-box-hover: rgba(204, 201, 194, 0.4);
   --color-header-bg: #5A827E;
   --color-project-bg: #C5C5C5;
-  --color-form-bg: #252F2F;
+  --color-form-bg: #314040;
   --color-form-outline: #404040;
 
-  --navbar-height: 72px;
-  --border-radius: 20px;
+  --navbar-height: 66px;
+  --border-radius: 30px;
   --transition-speed: 0.2s;
 }
 
@@ -40,8 +40,8 @@ body {
 #mainNavbar .nav-link {
   color: var(--color-text);
   font-weight: 200;
-  font-size: 1.5rem;
-  margin-left: 10px;
+  font-size: 1.1rem;
+  margin-left: 0px;
   transition: color var(--transition-speed) ease;
 }
 
@@ -121,7 +121,7 @@ body {
 .portfolio-column {
   background-color: var(--color-project-bg);
   padding: 10px 15px;
-  border-radius: 12px;
+  border-radius: 30px;
   text-align: center;
   margin-bottom: 20px;
 }
@@ -160,32 +160,7 @@ body {
 /* === CONTACT PAGE === */
 .contact-section {
   color: var(--color-text);
-  margin-top: 100px;
-}
-
-/* Contact page header  */
-.contact-title {
-  font-size: 2.5rem;
-}
-
-/* Divider under name */
-.contact-divider {
-  border: none;
-  height: 4px;
-  border-radius: var(--border-radius);
-  background-color: var(--color-box-hover);
-  width: 80%;
-  margin: 10px 0 30px 0;
-}
-
-/* Socials header */
-.contact-subtitle {
-  font-weight: 400;
-  font-size: 2rem;
-  background-color: var(--color-box);
-  padding: 6px 14px;
-  border-radius: 12px;
-  display: inline-block;
+  margin-top: 20px;
 }
 
 /* === SOCIAL BUTTONS === */
@@ -243,19 +218,31 @@ body {
 }
 
 /* === CONTACT FORM SECTION === */
+.contact-subtitle {
+  font-weight: 400;
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
 .contact-form-label {
   font-size: 1.5rem;
   font-weight: 400;
   color: var(--color-text);
-  margin-bottom: 8px;
+  background-color: var(--color-box);
+  padding: 3px 0;
+  border-radius: 999px;
+  display: block;
+  width: 100%;
+  max-width: 350px;
+  margin: 0 auto 10px auto;
   text-align: center;
+  transition: background-color var(--transition-speed) ease;
 }
 
 .contact-form-box {
   background-color: var(--color-form-bg);
   border-radius: var(--border-radius);
   padding: 20px 30px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
   text-align: center;
 }
 
@@ -265,11 +252,11 @@ body {
   width: 100%;
   background-color: var(--color-header-bg);
   color: var(--color-text);
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   font-weight: 400;
   text-align: center;
-  padding: 6px 0; /* thinner vertical padding */
-  border-radius: 10px;
+  padding: 3px 0;
+  border-radius: 999px;
   margin-bottom: 10px;
 }
 
@@ -278,15 +265,24 @@ body {
   background-color: var(--color-box);
   color: var(--color-text);
   border: none;
-  border-radius: 12px;
-  padding: 10px;
+  border-radius: 20px;
+  padding: 5px 10px;
   width: 100%;
-  margin-bottom: 20px;
+  max-width: 600px;
+  margin-bottom: 10px;
   text-align: center;
+  display: block;
 }
 
 .custom-input::placeholder {
   color: rgba(255, 255, 255, 0.6);
+}
+
+.custom-input:focus {
+  outline: none;
+  box-shadow: none;
+  background-color: var(--color-box);
+  color: var(--color-text);
 }
 
 /* Send button */
@@ -297,7 +293,7 @@ body {
   font-weight: 400;
   margin-top: 15px;
   padding: 10px 0;
-  border-radius: 12px;
+  border-radius: 20px;
   width: 100%;
 }
 
@@ -306,7 +302,38 @@ background-color: var(--color-accent);
 transform: scale(1.02);
 }
 
-/* === CONTACT PAGE HEADER OVERRIDE === */
-.contact-section .header-box .main-title {
-  font-size: 2.5rem; /* smaller size just for contact page */
+.social-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;                   /* space between button and text */
+  margin-bottom: 5px;         /* space between rows */
 }
+
+.social-extra-text {
+  font-size: 1.5rem;
+  color: var(--color-text);
+  font-weight: 200;
+}
+
+/* === CONTACT PAGE HEADER OVERRIDE === */
+.contact-section .header {
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.contact-section .header-box {
+  padding: 10px 15px;
+  border-radius: 20px;
+}
+
+.contact-section .header-box .main-title {
+  font-size: 3rem;
+  margin: 0;
+  white-space: nowrap;
+  display: flex;            /* use flexbox to center contents */
+  flex-direction: column;   /* stack h1 and p vertically */
+  align-items: center;
+  text-align: center;
+}
+
+
