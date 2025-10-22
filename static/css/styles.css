@@ -60,6 +60,16 @@ body {
   transform: scale(1.05);
 }
 
+.home-icon { /* Hide the home icon on desktop, show on mobile */
+  display: none; /* hide by default */
+  color: white;
+  font-size: 1.5rem;
+}
+
+.home-text {
+  display: inline; /* show text by default */
+}
+
 /* === HEADER === */
 .header {
   display: flex;
@@ -155,6 +165,31 @@ body {
 .project-box:hover {
   transform: scale(1.02);
   background-color: var(--color-accent);
+}
+
+.portfolio-header {
+  background-color: var(--color-header-bg);
+  color: var(--color-text);
+  padding: 15px 0px;
+  border-radius: var(--border-radius);
+  display: block;
+  text-align: center;
+  width: 100%;
+  margin: 0;
+  font-weight: 400;
+}
+
+.portfolio-header-container .see-more {
+  display: block;
+  text-align: center;
+  margin-top: 10px;
+  color: var(--color-accent);
+  text-decoration: none;
+  font-weight: 200;
+}
+
+.portfolio-header-container .see-more:hover {
+  text-decoration: underline;
 }
 
 /* === CONTACT PAGE === */
@@ -336,4 +371,96 @@ transform: scale(1.02);
   text-align: center;
 }
 
+/* === PORTFOLIO === */
+.portfolio-header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center; /* perfectly vertical alignment */
+  margin-top: 60px; /* adjust to taste below navbar */
+  margin-bottom: 1.5rem;
+  padding: 0 2rem;
+}
 
+/* Header itself — less wide again */
+.portfolio-header {
+  background-color: var(--color-header-bg);
+  color: var(--color-text);
+  padding: 8px 25px;
+  border-radius: 999px;
+  display: inline-block;
+  font-weight: 400;
+  font-size: 2rem;
+  width: auto;
+  white-space: nowrap;
+  margin: 0;
+  text-align: center;
+}
+
+/* Filter container — no fixed positioning! */
+.filter-container {
+  position: relative;  /* everything inside aligns with the button */
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+/* Filter button */
+.filter-btn {
+  background-color: var(--color-box);
+  color: var(--color-text);
+  border-radius: 999px;
+  padding: 8px 20px;
+  border: none;
+  cursor: pointer;
+  font-size: 1.1rem;
+  transition: background-color var(--transition-speed) ease, transform var(--transition-speed) ease;
+}
+
+.filter-btn:hover {
+  background-color: var(--color-box-hover);
+  transform: scale(1.03);
+}
+
+.filter-column {
+  position: absolute;
+  top: 100%;              /* place below the button */
+  margin-top: 8px;        /* small space between button and column */
+  right: 0;               /* align with button's right edge */
+  background-color: var(--color-form-bg);
+  border-radius: var(--border-radius);
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 130px;
+
+  opacity: 0;
+  pointer-events: none;
+  transform: translateX(20px); /* slide effect from right */
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  z-index: 10;
+}
+
+.filter-column.show {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateX(0);
+}
+
+/* Vertical line next to filter column */
+#filter-line {
+  position: absolute;
+  top: 100%;             /* align with top of column */
+  margin-top: 8px;       /* same as column margin */
+  right: 0;
+  width: 2px;
+  height: 100%;          /* match the column height */
+  background-color: var(--color-project-bg);
+  transition: transform 0.3s ease;
+  z-index: 5;
+}
+
+/* Slide the line along with the column when active */
+.filter-column.show ~ #filter-line {
+  transform: translateX(-130px); /* same distance column slides in */
+}

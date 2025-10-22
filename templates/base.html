@@ -25,10 +25,11 @@
         <!-- Right side on desktop, centered on mobile -->
         <ul class="navbar-nav d-flex flex-row gap-3 justify-content-center justify-content-md-end w-100 w-md-auto">
           <li class="nav-item">
-            <a class="nav-link nav-link-box {% if title == 'Home' %}active{% endif %}" href="{{ url_for('home') }}">
-              Home
-            </a>
-          </li>
+              <a class="nav-link nav-link-box {% if title == 'Home' %}active{% endif %}" href="{{ url_for('home') }}">
+                <span class="home-text">Home</span>
+                <span class="home-icon">&#8962;</span> <!-- Unicode for home icon -->
+              </a>
+            </li>
           <li class="nav-item">
             <a class="nav-link nav-link-box {% if title == 'Portfolio' %}active{% endif %}" href="{{ url_for('portfolio') }}">
               Portfolio

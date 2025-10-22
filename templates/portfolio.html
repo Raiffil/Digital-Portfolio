@@ -2,6 +2,43 @@
 {% block title %}Portfolio{% endblock %}
 
 {% block content %}
-  <h1 class="mb-4">Portfolio</h1>
+<section class="portfolio-section container-fluid mt-5 position-relative">
 
+  <!-- Header + Filters Row -->
+    <div class="portfolio-header-row d-flex justify-content-between align-items-center w-100 position-relative">
+      <!-- Header (top-left) -->
+      <h2 class="portfolio-header m-0">Portfolio</h2>
+
+      <!-- Filter Button + Column + Line -->
+      <div class="filter-container">
+        <button id="filter-btn" class="filter-btn">Filters</button>
+
+        <div id="filter-column" class="filter-column">
+          <span class="filter-tag">2D</span>
+          <span class="filter-tag">3D</span>
+          <span class="filter-tag">Software</span>
+          <span class="filter-tag">Other</span>
+        </div>
+
+        <div id="filter-line"></div>
+      </div>
+    </div>
+
+  <!-- Portfolio items grid -->
+  <div class="portfolio-grid row g-3 mt-4">
+    <div class="col-md-4">
+      <div class="portfolio-item">
+        <img src="{{ url_for('static', filename='images/2D work 1.png') }}" alt="2D Work 1" class="project-box">
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="portfolio-item">
+        <img src="{{ url_for('static', filename='images/3D work 1.jpg') }}" alt="3D Work 1" class="project-box">
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<script src="{{ url_for('static', filename='js/javascript.js') }}"></script>
 {% endblock %}

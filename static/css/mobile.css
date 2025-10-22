@@ -14,6 +14,27 @@
     justify-content: center; /* keep buttons centered on small screens */
   }
 
+  .home-icon {
+    display: inline;  /* show icon on small screens */
+  }
+
+  .home-text {
+    display: none;    /* hide text on small screens */
+  }
+
+  .navbar .nav-link-box .home-icon {
+  font-size: 1.8rem;
+  line-height: 1;
+  vertical-align: middle;
+}
+
+  #mainNavbar .nav-link-box {
+    padding: 8px 15px;
+    display: flex;
+    align-items: center;   /* vertical centering */
+    justify-content: center;
+  }
+
   .header .main-name {
     font-size: 1.6rem;
     padding: 15px 25px;
@@ -61,4 +82,8 @@
   font-size: 1.2rem;
   }
 
+.portfolio-header {
+    padding: 6px 12px;
+    font-size: 1.2rem;
+  }
 }
