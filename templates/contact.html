@@ -11,7 +11,7 @@
         <h1 class="main-title contact-title">Natália Palšovičová | Raiffil</h1>
       </div>
 
-      <h2 class="contact-subtitle mb-3">Socials</h2>
+      <h2 class="contact-subtitle">Socials</h2>
 
       <div class="social-buttons">
 
@@ -59,24 +59,44 @@
       </div>
     </div>
 
-   <!-- RIGHT SIDE: Contact Form -->
-    <div class="col-md-6 text-center">
-      <h2 class="contact-subtitle mb-3">Do you want to <br> Commission me?</h2>
+
+    <!-- honeypot field -->
+      <div style="display:none;">
+        <label>Leave this empty</label>
+        <input name="hp_name" type="text" autocomplete="off" tabindex="-1" />
+      </div>
+
+      <!-- RIGHT SIDE: Contact Form -->
+      {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+          <div class="mt-2">
+            {% for category, msg in messages %}
+              <div class="alert {% if category == 'error' %}alert-danger{% else %}alert-success{% endif %}">
+                {{ msg }}
+              </div>
+            {% endfor %}
+          </div>
+        {% endif %}
+      {% endwith %}
+
+      <div class="col-md-6 text-center">
+      <h2 class="contact-subtitle">Do you want to <br> Commission me?</h2>
       <p class="contact-form-label">Contact Form</p>
 
       <div class="contact-form-box mx-auto p-4 rounded-4" style="max-width: 400px;">
-        <form>
+        <form id="contactForm" method="post">
           <label class="form-label contact-label">Name</label>
-          <input type="text" class="form-control custom-input" placeholder="Jane Doe">
+          <input name="name" type="text" class="form-control custom-input" placeholder="Jane Doe" required>
 
           <label class="form-label contact-label">Email</label>
-          <input type="email" class="form-control custom-input" placeholder="jane.doe@gmail.com">
+          <input name="email" type="email" class="form-control custom-input" placeholder="jane.doe@gmail.com" required>
 
           <label class="form-label contact-label">Request</label>
-          <textarea class="form-control custom-input" rows="4" placeholder="Insert text here"></textarea>
+          <textarea name="request" class="form-control custom-input" rows="4" placeholder="Insert text here" required></textarea>
 
           <button type="submit" class="btn send-btn">Send</button>
         </form>
+
       </div>
     </div>
 
