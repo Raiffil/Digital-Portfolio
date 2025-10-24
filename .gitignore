@@ -1,0 +1,9 @@
+# Ignore environment variable files
+.env
+
+# Optional: ignore PyCharm settings
+.idea/
+
+# Optional: ignore Python cache files
+__pycache__/
+*.pyc
