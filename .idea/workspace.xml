@@ -4,10 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="08956899-4ca8-4feb-ac3c-abeae938927e" name="Changes" comment="[change] contact form required fields">
-      <change afterPath="$PROJECT_DIR$/.env" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    <list default="true" id="08956899-4ca8-4feb-ac3c-abeae938927e" name="Changes" comment="[change] update list">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/contact.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/contact.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -232,7 +234,39 @@
       <option name="project" value="LOCAL" />
       <updated>1761241901987</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="[add] gitignore file">
+      <option name="closed" value="true" />
+      <created>1761291881877</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1761291881877</updated>
+    </task>
+    <task id="LOCAL-00016" summary="[add] gitignore file">
+      <option name="closed" value="true" />
+      <created>1761291919195</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1761291919195</updated>
+    </task>
+    <task id="LOCAL-00017" summary="[change]">
+      <option name="closed" value="true" />
+      <created>1761291959744</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1761291959744</updated>
+    </task>
+    <task id="LOCAL-00018" summary="[change] update list">
+      <option name="closed" value="true" />
+      <created>1761294300977</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1761294300977</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -253,7 +287,10 @@
     <MESSAGE value="[change] details on contact page and contact form" />
     <MESSAGE value="[add] basic portfolio page layout" />
     <MESSAGE value="[change] contact form required fields" />
-    <option name="LAST_COMMIT_MESSAGE" value="[change] contact form required fields" />
+    <MESSAGE value="[add] gitignore file" />
+    <MESSAGE value="[change]" />
+    <MESSAGE value="[change] update list" />
+    <option name="LAST_COMMIT_MESSAGE" value="[change] update list" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/DigitalPortfolio$DigitalPortfolio.coverage" NAME="DigitalPortfolio Coverage Results" MODIFIED="1759393075954" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />

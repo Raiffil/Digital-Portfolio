@@ -60,44 +60,54 @@
     </div>
 
 
-    <!-- honeypot field -->
+    <!-- Honeypot field -->
       <div style="display:none;">
         <label>Leave this empty</label>
         <input name="hp_name" type="text" autocomplete="off" tabindex="-1" />
       </div>
 
       <!-- RIGHT SIDE: Contact Form -->
-      {% with messages = get_flashed_messages(with_categories=true) %}
-        {% if messages %}
-          <div class="mt-2">
-            {% for category, msg in messages %}
-              <div class="alert {% if category == 'error' %}alert-danger{% else %}alert-success{% endif %}">
-                {{ msg }}
-              </div>
-            {% endfor %}
-          </div>
-        {% endif %}
-      {% endwith %}
-
       <div class="col-md-6 text-center">
       <h2 class="contact-subtitle">Do you want to <br> Commission me?</h2>
       <p class="contact-form-label">Contact Form</p>
 
-      <div class="contact-form-box mx-auto p-4 rounded-4" style="max-width: 400px;">
-        <form id="contactForm" method="post">
-          <label class="form-label contact-label">Name</label>
-          <input name="name" type="text" class="form-control custom-input" placeholder="Jane Doe" required>
+      <div class="contact-form-wrapper">
+          <!-- FORM -->
+          <div class="contact-form-box mx-auto p-4 rounded-4">
+            <form id="contactForm" method="post" novalidate>
+              <label class="contact-label">Name</label>
+              <input name="name" type="text" class="form-control custom-input"
+                     placeholder="Jane Doe" value="{{ form['name'] }}">
 
-          <label class="form-label contact-label">Email</label>
-          <input name="email" type="email" class="form-control custom-input" placeholder="jane.doe@gmail.com" required>
+              <label class="contact-label mt-3">Email</label>
+              <input name="email" type="email" class="form-control custom-input"
+                     placeholder="jane.doe@gmail.com" value="{{ form['email'] }}">
 
-          <label class="form-label contact-label">Request</label>
-          <textarea name="request" class="form-control custom-input" rows="4" placeholder="Insert text here" required></textarea>
+              <label class="contact-label mt-3">Request</label>
+              <textarea name="request" class="form-control custom-input" rows="4"
+                        placeholder="Insert text here">{{ form['request'] }}</textarea>
 
-          <button type="submit" class="btn send-btn">Send</button>
-        </form>
+              <button type="submit" class="btn send-btn mt-3">Send</button>
+            </form>
+          </div>
 
-      </div>
+          <!-- ERRORS / SUCCESS MESSAGES -->
+          <div class="form-messages-column mt-2">
+            {% for field, msg in errors.items() %}
+              <div class="flash-msg flash-error">{{ msg }}</div>
+            {% endfor %}
+
+            {% with messages = get_flashed_messages(with_categories=true) %}
+              {% for category, msg in messages %}
+                <div class="flash-msg {% if category == 'error' %}flash-error{% else %}flash-success{% endif %}">
+                  {{ msg }}
+                </div>
+              {% endfor %}
+            {% endwith %}
+          </div>
+        </div>
+
+
     </div>
 
   </div>
