@@ -3,14 +3,49 @@ import re
 from dotenv import load_dotenv
 import os
 import requests
+from datetime import datetime
 
 app = Flask(__name__)
 app.secret_key = "replace-with-a-secure-random-string"
 load_dotenv()
-PERSPECTIVE_API_KEY = os.getenv("PERSPECTIVE_API_KEY")
 
+#  API Keys and Webhooks
+PERSPECTIVE_API_KEY = os.getenv("PERSPECTIVE_API_KEY")
+DISCORD_WEBHOOK_NORMAL = os.getenv("DISCORD_WEBHOOK_NORMAL")
+DISCORD_WEBHOOK_SPAM = os.getenv("DISCORD_WEBHOOK_SPAM")
 EMAIL_RE = re.compile(r'^[^@\s]+@[^@\s]+\.[^@\s]+$')
 
+# Send to Discord
+def send_to_discord(webhook_url, name, email, message, spam_score=None, toxic_score=None, is_spam=False):
+    """Send message to Discord using embeds for better formatting."""
+    timestamp = datetime.utcnow().isoformat()
+
+    embed = {
+        "title": "Contact Form Submission" if not is_spam else "Potential Spam Detected",
+        "color": 0x5A827E if not is_spam else 0xBE5050,  # teal for normal, red for spam
+        "fields": [
+            {"name": "Name", "value": name or "N/A", "inline": False},
+            {"name": "Email", "value": email or "N/A", "inline": False},
+            {"name": "Message", "value": message or "N/A", "inline": False},
+        ],
+        "footer": {
+            "text": f"Received at {timestamp} UTC"}}
+
+    if spam_score is not None and toxic_score is not None:
+        embed["fields"].append({
+            "name": "Spam Analysis",
+            "value": f"Spam Score: **{spam_score:.2f}** | Toxicity Score: **{toxic_score:.2f}**",
+            "inline": False})
+
+    payload = {
+        "embeds": [embed]}
+
+    try:
+        requests.post(webhook_url, json=payload)
+    except Exception as e:
+        print("Discord webhook error:", e)
+
+# Check spam with Perspective API
 def check_spam_perspective(text):
     """Send text to Google Perspective API and return True if it seems spammy."""
     url = f"https://commentanalyzer.googleapis.com/v1alpha1/comments:analyze?key={PERSPECTIVE_API_KEY}"
@@ -19,22 +54,18 @@ def check_spam_perspective(text):
     data = {
         "comment": {"text": text},
         "languages": ["en"],
-        "requestedAttributes": {"SPAM": {}, "TOXICITY": {}}
-    }
+        "requestedAttributes": {"SPAM": {}, "TOXICITY": {}}}
 
     try:
         response = requests.post(url, json=data)
         result = response.json()
         spam_score = result["attributeScores"]["SPAM"]["summaryScore"]["value"]
         toxic_score = result["attributeScores"]["TOXICITY"]["summaryScore"]["value"]
+        return spam_score, toxic_score
 
-        # You can tune this threshold:
-        if spam_score > 0.7 or toxic_score > 0.7:
-            return True  # looks spammy
-        return False
     except Exception as e:
         print("Perspective API error:", e)
-        return False
+        return 0.0, 0.0
 
 @app.route("/")
 def home():
@@ -64,7 +95,7 @@ def contact():
             flash("Spam detected.", "error")
             return render_template("contact.html", title="Contact", errors=errors, form=form_data)
 
-        # Validate each field separately
+        # Validate fields
         if not name:
             errors["name"] = "Please enter your name."
         if not email:
@@ -78,8 +109,17 @@ def contact():
         if errors:
             return render_template("contact.html", title="Contact", errors=errors, form=form_data)
 
-        # Otherwise process message
-        flash("Message sent", "success")
+        # Spam check
+        spam_score, toxic_score = check_spam_perspective(message)
+        is_spam = spam_score > 0.7 or toxic_score > 0.7
+
+        if is_spam:
+            send_to_discord(DISCORD_WEBHOOK_SPAM, name, email, message, spam_score, toxic_score, is_spam=True)
+            flash("Your message was received but is under review.", "error")
+        else:
+            send_to_discord(DISCORD_WEBHOOK_NORMAL, name, email, message, is_spam=False)
+            flash("Message sent", "success")
+
         return redirect(url_for("contact"))
 
     return render_template("contact.html", title="Contact", errors=errors, form=form_data)
