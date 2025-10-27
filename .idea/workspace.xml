@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="08956899-4ca8-4feb-ac3c-abeae938927e" name="Changes" comment="[change] Requirements">
+    <list default="true" id="08956899-4ca8-4feb-ac3c-abeae938927e" name="Changes" comment="[add] Gunicorn">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -320,7 +319,15 @@
       <option name="project" value="LOCAL" />
       <updated>1761575056691</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="[add] Gunicorn">
+      <option name="closed" value="true" />
+      <created>1761580616056</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1761580616056</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -349,7 +356,8 @@
     <MESSAGE value="[change] Toxicity and formatting" />
     <MESSAGE value="[add] Commit files" />
     <MESSAGE value="[change] Requirements" />
-    <option name="LAST_COMMIT_MESSAGE" value="[change] Requirements" />
+    <MESSAGE value="[add] Gunicorn" />
+    <option name="LAST_COMMIT_MESSAGE" value="[add] Gunicorn" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/DigitalPortfolio$DigitalPortfolio.coverage" NAME="DigitalPortfolio Coverage Results" MODIFIED="1759393075954" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
