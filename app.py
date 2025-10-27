@@ -126,5 +126,5 @@ def contact():
     return render_template("contact.html", title="Contact", errors=errors, form=form_data)
 
 
-if __name__ == "__main__":
-    app.run()
+#if __name__ == "__main__":
+#    app.run()
