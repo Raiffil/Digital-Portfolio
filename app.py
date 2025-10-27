@@ -3,11 +3,11 @@ import re
 from dotenv import load_dotenv
 import os
 import requests
-from datetime import datetime
+from datetime import datetime, timezone
 
 app = Flask(__name__)
-app.secret_key = "replace-with-a-secure-random-string"
 load_dotenv()
+app.secret_key = os.getenv("SECRET_KEY")
 
 #  API Keys and Webhooks
 PERSPECTIVE_API_KEY = os.getenv("PERSPECTIVE_API_KEY")
@@ -18,7 +18,7 @@ EMAIL_RE = re.compile(r'^[^@\s]+@[^@\s]+\.[^@\s]+$')
 # Send to Discord
 def send_to_discord(webhook_url, name, email, message, spam_score=None, toxic_score=None, is_spam=False):
     """Send message to Discord using embeds for better formatting."""
-    timestamp = datetime.utcnow().isoformat()
+    timestamp = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M:%S UTC")
 
     embed = {
         "title": "Contact Form Submission" if not is_spam else "Potential Spam Detected",
@@ -61,6 +61,7 @@ def check_spam_perspective(text):
         result = response.json()
         spam_score = result["attributeScores"]["SPAM"]["summaryScore"]["value"]
         toxic_score = result["attributeScores"]["TOXICITY"]["summaryScore"]["value"]
+
         return spam_score, toxic_score
 
     except Exception as e:
@@ -111,7 +112,7 @@ def contact():
 
         # Spam check
         spam_score, toxic_score = check_spam_perspective(message)
-        is_spam = spam_score > 0.7 or toxic_score > 0.7
+        is_spam = spam_score > 0.5 or toxic_score > 0.5
 
         if is_spam:
             send_to_discord(DISCORD_WEBHOOK_SPAM, name, email, message, spam_score, toxic_score, is_spam=True)
