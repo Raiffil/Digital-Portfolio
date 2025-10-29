@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="08956899-4ca8-4feb-ac3c-abeae938927e" name="Changes" comment="[add] GitHub Actions workflow for Azure deployment">
+    <list default="true" id="08956899-4ca8-4feb-ac3c-abeae938927e" name="Changes" comment="[change] Start up commands">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/start.sh" beforeDir="false" afterPath="$PROJECT_DIR$/start.sh" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -357,7 +356,15 @@
       <option name="project" value="LOCAL" />
       <updated>1761581744024</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="[change] Start up commands">
+      <option name="closed" value="true" />
+      <created>1761592254854</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1761592254854</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -388,7 +395,8 @@
     <MESSAGE value="[change] Requirements" />
     <MESSAGE value="[add] Gunicorn" />
     <MESSAGE value="[add] GitHub Actions workflow for Azure deployment" />
-    <option name="LAST_COMMIT_MESSAGE" value="[add] GitHub Actions workflow for Azure deployment" />
+    <MESSAGE value="[change] Start up commands" />
+    <option name="LAST_COMMIT_MESSAGE" value="[change] Start up commands" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/DigitalPortfolio$DigitalPortfolio.coverage" NAME="DigitalPortfolio Coverage Results" MODIFIED="1759393075954" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />

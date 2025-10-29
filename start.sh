@@ -1,10 +1,9 @@
 #!/usr/bin/env bash
 
-# Make sure the environment is production
+# Set environment variables
+export FLASK_APP=app.py
 export FLASK_ENV=production
 
-# Run Gunicorn with your Flask app
-# --bind: listens on all interfaces on the port Azure assigns
-# --workers: number of worker processes (adjust based on your app size)
-# --timeout: seconds before a worker is killed if unresponsive
-gunicorn --bind=0.0.0.0:$PORT --workers=4 --timeout 600 app:app
+# Start the app using Gunicorn and bind to the port provided by Azure
+# app:app -> first 'app' is your filename (app.py), second 'app' is your Flask instance
+gunicorn --workers 4 --bind 0.0.0.0:$PORT app:app
